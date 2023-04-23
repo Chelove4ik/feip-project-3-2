@@ -1,0 +1,160 @@
+{% extends 'layouts/base.html' %}
+
+{% set scope = {
+  'gallery': {
+    'galleryItems': [
+        {
+          'image': '/static/images/image_placeholder.png',
+        },
+        {
+          'image': '/static/images/image_placeholder.png',
+        },
+        {
+          'image': '/static/images/image_placeholder.png',
+        },
+        {
+          'image': '/static/images/image_placeholder.png',
+        },
+        {
+          'image': '/static/images/image_placeholder.png',
+        },
+        {
+          'image': '/static/images/image_placeholder.png',
+        },
+        {
+          'image': '/static/images/image_placeholder.png',
+        },
+    ],
+  },
+  'color': 'Белый',
+  'title': 'Жакет Weekend Max Mara ONDINA',
+  'id': '4022995L',
+  'description': 'Жакет с поясом<br>
+  - Длинный двубортный плащ с поясом; Кокетка на спине<br>
+  - Застёжка на 3 ряда пуговиц; 2 внешних кармана; Регулируемые паты на рукавах; сзади высокая встречная складка; Длина: 123,6 см',
+  'material': 'Основная ткань: 100% Полиэстер; Пояс: 100% Полиэстер;<br>
+  Подкл: 100% Полиэстер',
+  'sizes': [
+    {
+      'name': 'XS',
+    },
+    {
+      'name': 'S',
+    },
+    {
+      'name': 'M',
+    },
+    {
+      'name': 'L',
+    },
+    {
+      'name': 'XL',
+    },
+  ],
+  'colors': [
+    {
+      'name': 'Белый',
+      'color': '#FFFFFF',
+      'url': '/',
+    },
+    {
+      'name': 'Светло-серый',
+      'color': '#CDCFD6',
+      'url': '/',
+    },
+    {
+      'name': 'Тёмно-серый',
+      'color': '#616575',
+      'url': '/',
+    },
+    {
+      'name': 'Чёрный',
+      'color': '#323540',
+      'url': '/',
+    },
+  ],
+  'price': '6000',
+  'WALink': '/',
+} %}
+
+{% macro gallery(scope) %}
+<div class="Gallery">
+  <div class="Gallery__list">
+    
+  </div>
+  {% set item = scope.galleryItems[0] %}
+  <div class="Gallery__display">
+    <img class="Gallery__displayImage" src="{{ item.image }}">
+  </div>
+</div>
+{% endmacro %} 
+
+{% block main %}
+<div class="Product">
+  <div class="Product__gallery">
+    {{ gallery(scope.gallery) }}
+  </div>
+  <div class="Product__info">
+    <div class="Product__title">
+      {{ scope.title }}
+    </div>
+    <div class="Product__id">
+      <div class="Product__idSign">
+        Артикул: 
+      </div>
+      <div class="Product__idValue">
+        {{ scope.id }}
+      </div>
+    </div>
+    <div class="Product__section">
+      <div class="Product__text">
+        {% autoescape false %}
+          {{ scope.description }}
+        {% endautoescape %}
+      </div>
+    </div>
+    <div class="Product__section">
+      <div class="Product__sectionTitle">
+        СОСТАВ:
+      </div>
+      <div class="Product__text">
+        {% autoescape false %}
+          {{ scope.material }}
+        {% endautoescape %}
+      </div>
+    </div>
+    <div class="Product__section">
+      <div class="Product__sectionTitle">
+        РАЗМЕР:
+      </div>
+      <div class="Product__sizeMenu">
+        <div class="Product__sizePicker">
+          <select class="form-select" name="sizes">
+            <option value="" selected disabled hidden></option>
+            {% for item in scope.sizes %}
+              <option value="{{ item.name }}">{{ item.name }}</option>
+            {% endfor %}     
+          </select>
+        </div>
+        <div class="Product__text">
+          Не можете подобрать размер?<br>
+          <a href="{{ scope.WALink }}" class="Product__link">
+            Запишитесь на примерку в наш шоурум
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="Product__section">
+      <div class="Product__sectionTitle">
+        ЦВЕТ:
+      </div>
+      <div class="ColorMenu">
+        {% for item in scope.colors %}
+          <a class="ColorMenu__item {{'ColorMenu__item--selected' if scope.color == item.name }}"
+           href="{{ item.url }}" style="background-color: {{ item.color }}"></a>
+        {% endfor %}     
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} 

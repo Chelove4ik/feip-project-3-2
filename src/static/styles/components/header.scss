@@ -1,0 +1,138 @@
+.HeaderUpper {
+  background-color: $color-darkgray;
+  padding: 12px 96px;
+
+  &__menu {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.SiteNav {
+  display: flex;
+  list-style: none;
+      
+  &--vertical {
+      flex-flow: column;
+  }
+  
+  &__listItem {
+      color: $color-white;
+      font-family: 'PT Sans', sans-serif;
+      font-size: 12px;
+      line-height: 1.25;
+      
+      &:not(:last-child) {
+          margin-right: 24px;
+      }
+      
+      &--vertical {
+          width: auto;
+          
+          &:not(:last-child) {
+              margin-bottom: 1em;
+          }
+      }
+  }
+}
+
+.Socials {
+  display: flex;
+  list-style: none;
+  margin-left: auto;
+      
+  &__listItem {
+      color: $color-white;
+      font-family: 'PT Sans', sans-serif;
+      font-size: 12px;
+      line-height: 1.25;
+      
+      &:not(:last-child) {
+          margin-right: 18px;
+      }
+  }
+
+  &__item {
+      display: flex;
+      align-items: center;
+  }
+}
+
+.Contact {
+  margin-left: 18px;
+      
+  &__link {
+    display: flex;
+    list-style: none;
+    flex-flow: row;
+    align-items: center;
+    color: $color-white;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 12px;
+  }
+      
+  &__text {
+    margin-left: 4px;
+    line-height: 1.25;
+  }
+}
+
+.HeaderLower {
+  display: flex;
+  align-items: center;
+  background-color: $color-white;
+  padding: 24px 96px;
+  border-bottom: 1.5px solid #CDCFD6;
+      
+  &__logo {
+    padding: 0px 14px;
+    height: 46px;
+  }
+      
+  &__logoImage {
+    width: 66px;
+    height: 46px;
+  }
+      
+  &__userMenu {
+    margin-left: auto;
+  }
+}
+
+.UserMenu {
+  display: flex;
+  list-style: none;
+      
+  &__listItem {
+    color: $color-darkergray;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+    
+    &:not(:last-child) {
+      margin-right: 24px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    line-height: 1.2;
+  }
+      
+  &__text {
+    margin-left: 8px;
+  }
+}
+
+.OffCanvas {
+  &__content {
+    display: flex;
+    flex-flow: column;
+    padding: 105px 21px 54px;
+    background-color: $color-darkblue;
+  }
+
+  &__logoutButton {
+    margin-top: auto;
+  }
+}

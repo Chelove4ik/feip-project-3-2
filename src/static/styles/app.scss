@@ -1,0 +1,34 @@
+//Variables
+$color-black: black;
+$color-white: white;
+$color-lightergray: #F7F7FC;
+$color-lightgray: #CDCFD6;
+$color-gray: #9CA0AB;
+$color-darkgray: #616575;
+$color-sign-gray: #515562;
+$color-darkergray: #323540;
+$color-darkblue: #3b63ab;
+$color-lightblue: #6995d0;
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+// Functions
+@function toRem($size) {
+  @return $size/16px * 1rem;
+}
+
+@import "./layout.scss";
+
+//Elements
+@import "./elements.scss";
+
+//Components
+@import "components/header.scss";
+@import "components/product.scss";
+
+:root {
+  --bs-border-radius: 0%;
+  --bs-border-color: $color-lightgray;
+}

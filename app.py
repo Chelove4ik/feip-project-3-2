@@ -6,7 +6,7 @@ from backend.config import app
 @app.route('/')
 def index():
     name = "Test"
-    return render_template('index.html', name=name)
+    return render_template('product.html', name=name)
 
 
 if __name__ == "__main__":
