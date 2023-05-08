@@ -1,0 +1,34 @@
+
+{% macro content() %}
+    <div class="modal" id="exampleModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form method="POST" action="{{ url_for('login') }}">
+                    <!--  csrf_field()  -->
+                    <div class="Form">
+                        <div class="Form__header">
+                            Мы отправим на номер SMS-сообщение с кодом подтверждения
+                        </div>
+
+                        <label class="Form__label" for="phone_number">Телефон:</label>
+                        <input class="Form__field" type="text" id="phone_number" name="phone_number">
+                        <input class="Button Button--primary Form__button" type="submit" id="submit" name="submit" value="Получить код">
+
+                        <div class="Form__hint">
+                            Нажимая на кнопку, вы принимаете пользовательское соглашение и политику конфиденциальности
+                        </div>
+                        <label class="Form__label" for="password">Код:</label>
+                        <input class="Form__field" type="password" id="password" name="password">
+
+                        <div class="Form__hint">
+                            Отправили сообщение на номер
+                        </div>
+                        <input class="Button Button--primary Form__button" type="submit" id="submit" name="submit" value="Получить повторно">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{{ content() }}

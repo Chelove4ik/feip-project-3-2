@@ -1,0 +1,20 @@
+{% macro content(scope) %}
+<div class="ProductList">
+    <div class="ProductList__grid">
+        {% include 'components/product-card.html' %}
+        {% include 'components/product-card.html' %}
+        {% include 'components/product-card.html' %}
+        {% include 'components/product-card.html' %}
+        {% include 'components/product-card.html' %}
+        {% include 'components/product-card.html' %}
+        {% include 'components/product-card.html' %}
+        {% include 'components/product-card.html' %}
+        {% include 'components/product-card.html' %}
+    </div>
+    <div class="ProductList__pagination">
+        <!-- пагинация -->
+    </div>
+</div>
+{% endmacro %}
+
+{{ content(scope) }}

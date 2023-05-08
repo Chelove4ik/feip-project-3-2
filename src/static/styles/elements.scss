@@ -1,3 +1,21 @@
 a { 
     color: inherit;
 } 
+
+.Button {
+    background-color: $color-darkgray;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: $color-white;
+    text-decoration: underline;
+    padding: 11.5px 30px;
+
+    &:active {
+        color: white;
+    }
+
+    &:hover {
+        color: white;
+    }
+}

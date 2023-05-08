@@ -56,6 +56,11 @@
       display: flex;
       align-items: center;
   }
+
+  &__icon {
+      width: 12px;
+      height: 12px;
+  }
 }
 
 .Contact {
@@ -75,6 +80,11 @@
     margin-left: 4px;
     line-height: 1.25;
   }
+
+  &__icon {
+      width: 12px;
+      height: 12px;
+  }
 }
 
 .HeaderLower {
@@ -82,7 +92,7 @@
   align-items: center;
   background-color: $color-white;
   padding: 24px 96px;
-  border-bottom: 1.5px solid #CDCFD6;
+  border-bottom: 1.5px solid $color-lightgray;
       
   &__logo {
     padding: 0px 14px;
@@ -117,10 +127,16 @@
     display: flex;
     align-items: center;
     line-height: 1.2;
+    cursor: pointer;
   }
       
   &__text {
     margin-left: 8px;
+  }
+
+  &__icon {
+      width: 24px;
+      height: 24px;
   }
 }
 

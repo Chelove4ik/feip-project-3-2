@@ -58,23 +58,21 @@
     'image': '/static/images/logo.svg',
   },
   'userMenu': {
-    'userMenuItems': [
-        {
-            'url': '/',
-            'name': 'Избранное',
-            'icon': '/static/images/favourites_icon.svg',
-        },
-        {
-            'url': '/',
-            'name': 'Вход/Регистрация',
-            'icon': '/static/images/user_icon.svg',
-        },
-        {
-            'url': '/',
-            'name': 'Корзина',
-            'icon': '/static/images/cart_icon.svg',
-        },
-    ],
+    'favourites': {
+      'url': '/',
+      'name': 'Избранное',
+      'icon': '/static/images/favourites_icon.svg',
+    },
+    'login': {
+      'url': '/',
+      'name': 'Вход/Регистрация',
+      'icon': '/static/images/user_icon.svg',
+    },
+    'cart': {
+      'url': '/',
+      'name': 'Корзина',
+      'icon': '/static/images/cart_icon.svg',
+    },
   },
 } %}
 
@@ -104,13 +102,7 @@
     } %}
     <li class="Socials__listItem">
       <a href="{{ item.url }}" class="Socials__item">
-        <img
-            class="Socials__icon"
-            src="{{ item.icon }}"
-            alt="{{ item.name }}"
-            width="12"
-            height="12"
-        >
+        <img class="Socials__icon" src="{{ item.icon }}" alt="{{ item.name }}">
       </a>
     </li>
   {% endfor %}
@@ -125,13 +117,7 @@
       'icon': scope.icon or '',
     } %}
       <a href="{{ scope.url }}" class="Contact__link">
-        <img
-            class="Contact__icon"
-            src="{{ scope.icon }}"
-            alt=""
-            width="12"
-            height="12"
-        >
+        <img class="Contact__icon" src="{{ scope.icon }}" alt="{{ scope.name }}">
         <div class="Contact__text ">
           {{ scope.name }}
         </div>
@@ -141,27 +127,31 @@
 
 {% macro userMenu(scope) %}
 <div class="UserMenu">
-  {% for item in scope.userMenuItems %}
-    {% set item = {
-      'url': item.url or '',
-      'name': item.name or '',
-      'icon': item.icon or '',
-    } %}
-    <li class="UserMenu__listItem">
-      <a href="{{ item.url }}" class="UserMenu__item">
-        <img
-            class="UserMenu__icon"
-            src="{{ item.icon }}"
-            alt="{{ item.name }}"
-            width="24"
-            height="24"
-        >
-        <div class="UserMenu__text ">
-          {{ item.name }}
-        </div>
-      </a>
-    </li>
-  {% endfor %}
+  <li class="UserMenu__listItem">
+    <a class="UserMenu__item" href="{{ scope.favourites.url }}">
+      <img class="UserMenu__icon" src="{{ scope.favourites.icon }}" alt="{{ scope.favourites.name }}">
+      <div class="UserMenu__text ">
+        {{ scope.favourites.name }}
+      </div>
+    </a>
+  </li>
+  <li class="UserMenu__listItem">
+    <a class="UserMenu__item" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <img class="UserMenu__icon" src="{{ scope.login.icon }}" alt="{{ scope.login.name }}">
+      <div class="UserMenu__text ">
+        {{ scope.login.name }}
+      </div>
+    </a>
+  </li>
+  <li class="UserMenu__listItem">
+    <a class="UserMenu__item" href="{{ scope.cart.url }}">
+      <img class="UserMenu__icon" src="{{ scope.cart.icon }}" alt="{{ scope.cart.name }}">
+      <div class="UserMenu__text ">
+        {{ scope.cart.name }}
+      </div>
+    </a>
+  </li>
+  {% include 'components/modals/login-form.html' %}
 </div>
 {% endmacro %} 
 

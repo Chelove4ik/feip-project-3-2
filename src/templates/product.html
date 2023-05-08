@@ -73,7 +73,7 @@
       'url': '/',
     },
   ],
-  'price': '6000',
+  'priceString': '6 000 ₽',
   'WALink': '/',
 } %}
 
@@ -154,6 +154,12 @@
            href="{{ item.url }}" style="background-color: {{ item.color }}"></a>
         {% endfor %}     
       </div>
+    </div>
+    <div class="Product__buyMenu">
+      <div class="Product__price">
+        {{ scope.priceString }}
+      </div>
+      <button type="button" class="Button">В КОРЗИНУ</button>
     </div>
   </div>
 </div>
