@@ -17,6 +17,7 @@
     transform: translate(-16px, -16px);
     overflow: hidden;
     transition: 100ms ease-in-out;
+    text-decoration: none;
     &:hover {
       background-color: $color-white;
       z-index: 2;
@@ -37,8 +38,8 @@
     font-family: 'PT Sans', sans-serif;
     font-size: 16px;
     font-weight: 500;
-    text-decoration: underline;
     margin-bottom: 24px;
+    text-decoration: underline;
   }
 
   &__price {

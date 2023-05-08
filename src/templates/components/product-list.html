@@ -11,9 +11,17 @@
         {% include 'components/product-card.html' %}
         {% include 'components/product-card.html' %}
     </div>
-    <div class="ProductList__pagination">
-        <!-- пагинация -->
-    </div>
+    <ul class="Pagination">
+        <!-- <li class="Pagination__item"><a class="Pagination__link" href="#">&laquo;</a></li> -->
+        <li class="Pagination__item"><a class="Pagination__link Pagination__link--current">1</a></li>
+        <li class="Pagination__item"><a class="Pagination__link" href="/">2</a></li>
+        <li class="Pagination__item"><a class="Pagination__link" href="/">3</a></li>
+        <li class="Pagination__item"><a class="Pagination__link" href="/">4</a></li>
+        <li class="Pagination__item"><a class="Pagination__link" href="/">5</a></li>
+        <li class="Pagination__item"><a class="Pagination__link" href="/">6</a></li>
+        <li class="Pagination__item"><a class="Pagination__link" href="/">7</a></li>
+        <li class="Pagination__item"><a class="Pagination__link" href="/">&raquo;</a></li>
+    </ul>
 </div>
 {% endmacro %}
 
