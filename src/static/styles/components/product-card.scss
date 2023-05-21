@@ -1,20 +1,20 @@
 .ProductCard {
-  width: 288px;
-  height: 488px;
+  width: 288px + 32px;
+  height: 488px + 32px;
   display: flex;
   flex-flow: column;
   line-height: 121%;
-  position: relative;
+  // position: relative;
   overflow: visible;
 
-  &__link {
+  &__wrapper {
     background-color: rgba(0, 0, 0, 0);
     position: absolute;
     z-index: 1;
     width: 288px + 32px;
     height: 488px + 32px;
     padding: 16px;
-    transform: translate(-16px, -16px);
+    // transform: translate(-16px, -16px);
     overflow: hidden;
     transition: 100ms ease-in-out;
     text-decoration: none;
@@ -51,8 +51,11 @@
   }
 
   &__button {
-    display: block;
+    display: none;
     height: 40px;
     width: 100%;
+    :hover > & {
+      display: block;
+    }
   }
 }

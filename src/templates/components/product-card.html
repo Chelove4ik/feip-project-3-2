@@ -33,6 +33,7 @@
     - Застёжка на 3 ряда пуговиц; 2 внешних кармана; Регулируемые паты на рукавах; сзади высокая встречная складка; Длина: 123,6 см',
     'material': 'Основная ткань: 100% Полиэстер; Пояс: 100% Полиэстер;<br>
     Подкл: 100% Полиэстер',
+    'multSizes': 'true',
     'sizes': [
       {
         'name': 'XS',
@@ -79,19 +80,24 @@
 
 {% macro content(scope) %}
 <div class="ProductCard">
-  <a class="ProductCard__link" href="/product">
-    <img class="ProductCard__image" src="{{ scope.preview }}" alt="{{ scope.title }}" width="288">
-    <div class="ProductCard__title">
-      {{ scope.title }}
-    </div>
-    <div class="ProductCard__price">
-      {{ scope.priceString }}
-    </div>
-    <button class="ProductCard__button Button">
+  <div class="ProductCard__wrapper">
+    <a class="ProductCard__link" href="/product">
+      <img class="ProductCard__image" src="{{ scope.preview }}" alt="{{ scope.title }}" width="288">
+      <div class="ProductCard__title">
+        {{ scope.title }}
+      </div>
+      <div class="ProductCard__price">
+        {{ scope.priceString }}
+      </div>
+    </a>
+    <button class="ProductCard__button Button" data-bs-toggle="modal" data-bs-target="#sizePickerModal">
       В КОРЗИНУ
     </button>
-  </a>
+    
+  </div>
 </div>
+{% from 'components/modals/size-picker-modal.html' import sizePickerModal %}
+{{ sizePickerModal(scope) }}
 {% endmacro %}
 
 {{ content(scope) }}

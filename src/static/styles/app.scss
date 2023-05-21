@@ -2,8 +2,10 @@
 $color-black: black;
 $color-white: white;
 $color-lightergray: #F7F7FC;
+$color-border-gray: #ADB1BB;
 $color-lightgray: #CDCFD6;
 $color-gray: #9CA0AB;
+$color-hint-gray: #828282;
 $color-darkgray: #616575;
 $color-sign-gray: #515562;
 $color-darkergray: #323540;
@@ -34,4 +36,16 @@ $font-weight-bold: 700;
 :root {
   --bs-border-radius: 0%;
   --bs-border-color: $color-lightgray;
+}
+.modal {
+  --bs-modal-width: 384px;
+  --bs-modal-border-width: 1px;
+  --bs-modal-border-radius: 0px;
+  --bs-modal-border-color: #E8E5E2;
+}
+.btn-close {
+  --bs-btn-close-color: $color-sign-gray;
+  --bs-btn-close-opacity: 0.2;
+  --bs-btn-close-bg: none;
+  box-sizing: border-box;
 }

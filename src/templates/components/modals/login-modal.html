@@ -1,0 +1,47 @@
+
+{% macro content() %}
+  <div class="modal" id="loginModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <form method="POST" action="{{ url_for('login') }}">
+          <!--  csrf_field()  -->
+          <div class="Form" id="loginModal-phoneInput">
+            <button type="button" class="btn-close Form__closeButton" data-bs-dismiss="modal" aria-label="Close">
+              <img
+                class="Form__closeButtonImage"
+                src="static/images/close_icon.svg"
+                alt="Закрыть"
+              >
+            </button>
+            <div class="Form__header">
+              Подтвердите номер телефона
+            </div>
+
+            <div class="Form__label">
+              Мы отправим на номер SMS-сообщение с кодом подтверждения
+            </div>
+            <input class="Form__field" type="text" id="phone_number" name="phone_number">
+            <input class="Button Button--primary Form__button" type="submit" id="submit" name="submit" value="ПОЛУЧИТЬ КОД">
+            <div class="Form__hint">
+              Нажимая на кнопку, вы принимаете пользовательское соглашение и политику конфиденциальности
+            </div>            
+          </div>
+          <div class="Form" id="loginModal-phoneInput">
+            <div class="Form__header">
+              Введите код
+            </div>
+            <div class="Form__label">
+              Отправили сообщение на номер
+            </div>
+            <input class="Form__field" type="password" id="password" name="password">
+
+            <input class="Button Button--primary Form__button" type="submit" id="submit" name="submit" value="ПОЛУЧИТЬ ПОВТОРНО">
+            <input class="Button Button--primary Form__button" type="submit" id="submit" name="submit" value="ИЗМЕНИТЬ ТЕЛЕФОН">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endmacro %}
+
+{{ content() }}

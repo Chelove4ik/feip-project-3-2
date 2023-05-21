@@ -136,7 +136,7 @@
     </a>
   </li>
   <li class="UserMenu__listItem">
-    <a class="UserMenu__item" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <a class="UserMenu__item" data-bs-toggle="modal" data-bs-target="#loginModal">
       <img class="UserMenu__icon" src="{{ scope.login.icon }}" alt="{{ scope.login.name }}">
       <div class="UserMenu__text ">
         {{ scope.login.name }}
@@ -151,7 +151,7 @@
       </div>
     </a>
   </li>
-  {% include 'components/modals/login-form.html' %}
+  {% include 'components/modals/login-modal.html' %}
 </div>
 {% endmacro %} 
 
