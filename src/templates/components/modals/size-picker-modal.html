@@ -5,26 +5,26 @@
       <div class="modal-content Modal">
         <form method="POST" action="{{ url_for('login') }}">
           <!--  csrf_field()  -->
-          <div class="Form">
-            <button type="button" class="btn-close Form__closeButton" data-bs-dismiss="modal" aria-label="Close">
+          <div class="Modal">
+            <button type="button" class="btn-close Modal__closeButton" data-bs-dismiss="modal" aria-label="Close">
               <img
-              class="Form__closeButtonImage"
+              class="Modal__closeButtonImage"
               src="static/images/close_icon.svg"
               alt="Закрыть"
             >
           </button>
-            <div class="Form__header">
+            <div class="Modal__header">
               Выберите размер:
             </div>
             
-            <select class="form-select Form__select" name="sizes">
+            <select class="form-select Modal__select" name="sizes">
               <option value="" selected disabled hidden></option>
               {% for item in scope.sizes %}
                 <option value="{{ item.name }}">{{ item.name }}</option>
               {% endfor %}     
             </select>
             
-            <input class="Button Button--primary Form__button" type="submit" id="submit" name="submit" value="В корзину">
+            <input class="Button Button--primary Modal__button" type="submit" id="submit" name="submit" value="В корзину">
           </div>
         </form>
       </div>

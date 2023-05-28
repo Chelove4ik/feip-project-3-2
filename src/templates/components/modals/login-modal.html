@@ -5,38 +5,38 @@
       <div class="modal-content">
         <form method="POST" action="{{ url_for('login') }}">
           <!--  csrf_field()  -->
-          <div class="Form" id="loginModal-phoneInput">
-            <button type="button" class="btn-close Form__closeButton" data-bs-dismiss="modal" aria-label="Close">
+          <div class="Modal" id="loginModal-phoneInput">
+            <button type="button" class="btn-close Modal__closeButton" data-bs-dismiss="modal" aria-label="Close">
               <img
-                class="Form__closeButtonImage"
+                class="Modal__closeButtonImage"
                 src="static/images/close_icon.svg"
                 alt="Закрыть"
               >
             </button>
-            <div class="Form__header">
+            <div class="Modal__header">
               Подтвердите номер телефона
             </div>
 
-            <div class="Form__label">
+            <div class="Modal__label">
               Мы отправим на номер SMS-сообщение с кодом подтверждения
             </div>
-            <input class="Form__field" type="text" id="phone_number" name="phone_number">
-            <input class="Button Button--primary Form__button" type="submit" id="submit" name="submit" value="ПОЛУЧИТЬ КОД">
-            <div class="Form__hint">
+            <input class="Modal__field" type="text" id="phone_number" name="phone_number">
+            <input class="Button Button--primary Modal__button" type="submit" id="submit" name="submit" value="ПОЛУЧИТЬ КОД">
+            <div class="Modal__hint">
               Нажимая на кнопку, вы принимаете пользовательское соглашение и политику конфиденциальности
             </div>            
           </div>
-          <div class="Form" id="loginModal-phoneInput">
-            <div class="Form__header">
+          <div class="Modal" id="loginModal-phoneInput">
+            <div class="Modal__header">
               Введите код
             </div>
-            <div class="Form__label">
+            <div class="Modal__label">
               Отправили сообщение на номер
             </div>
-            <input class="Form__field" type="password" id="password" name="password">
+            <input class="Modal__field" type="password" id="password" name="password">
 
-            <input class="Button Button--primary Form__button" type="submit" id="submit" name="submit" value="ПОЛУЧИТЬ ПОВТОРНО">
-            <input class="Button Button--primary Form__button" type="submit" id="submit" name="submit" value="ИЗМЕНИТЬ ТЕЛЕФОН">
+            <input class="Button Button--primary Modal__button" type="submit" id="submit" name="submit" value="ПОЛУЧИТЬ ПОВТОРНО">
+            <input class="Button Button--primary Modal__button" type="submit" id="submit" name="submit" value="ИЗМЕНИТЬ ТЕЛЕФОН">
           </div>
         </form>
       </div>

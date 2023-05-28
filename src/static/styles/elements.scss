@@ -22,6 +22,74 @@ a {
 
 .Form {
     font-family: 'PT Sans', sans-serif;
+    width: 470px;
+
+    &__header {
+        font-size: 24px;
+        font-weight: 700;
+        color: $color-darkergray;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+
+    &__label {
+        display: block;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 121%;
+        color: $color-sign-gray;
+        text-align: left;
+        margin-bottom: 8px;
+    }
+
+    &__field {
+        background-color: $color-white;
+        border: 1px solid $color-border-gray;
+        font-size: 14px;
+        font-weight: 400;
+        color: $color-darkergray;
+        height: 40px;
+        width: 100%;
+        padding: 0px 16px;
+    }
+
+    &__button {
+        width: 100%;
+        margin-bottom: 24px;
+        white-space: nowrap;
+    }
+
+    &__select {
+        width: 100%;
+        margin-bottom: 31px;
+    }
+
+    &__contactsGroup {
+        display: flex;
+        flex-direction: column;
+        gap: 21px;
+        margin-bottom: 45px;
+    }
+
+    &__addressGroup {
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+    }
+
+    &__row {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+    }
+
+    &__column {
+        width: 100%;
+    }
+}
+
+.Modal {
+    font-family: 'PT Sans', sans-serif;
     margin: 56px 40px;
 
     &__closeButton {
@@ -79,6 +147,7 @@ a {
     &__button {
         width: 100%;
         margin-bottom: 24px;
+        white-space: nowrap;
     }
 
     &__select {

@@ -4,9 +4,19 @@ from backend.config import app
 
 
 @app.route('/product')
-def index():
+def product():
     name = "Product"
     return render_template('product.html', name=name)
+
+@app.route('/cart')
+def cart():
+    name = "Cart"
+    return render_template('cart.html', name=name)
+
+@app.route('/checkout')
+def checkout():
+    name = "Checkout"
+    return render_template('checkout.html', name=name)
 
 @app.route('/')
 def login():
